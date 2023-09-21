@@ -28,15 +28,15 @@ public class HelloWorldController {
     public static final String IP_KEY = "ip";
 
     @GetMapping(path = "/", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public Map<String, String> helloWorld() throws UnknownHostException {
-        return getResponse();
+    public String helloWorld() throws UnknownHostException {
+        return "timPen";
     }
 
     private Map<String, String> getResponse() throws UnknownHostException {
         String host = InetAddress.getLocalHost().getHostName();
         String ip = InetAddress.getLocalHost().getHostAddress();
         Map<String, String> response = new HashMap<>();
-        response.put(MESSAGE_KEY, "Hello World!");
+        response.put(MESSAGE_KEY, "Nevin Sunny!");
         response.put(HOSTNAME_KEY, host);
         response.put(IP_KEY, ip);
         LOG.info("Returning {}", response);
